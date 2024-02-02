@@ -1,0 +1,101 @@
+
+
+.form {
+  display: flex;
+  justify-content: center;  
+}
+
+.sectionForm {
+  display: flex;
+  width: 46rem;
+  height: 3.25rem;
+  gap: 0.5rem;
+  margin-top: -1.7rem;
+}
+
+.sectionForm textarea {
+  width: 40rem;
+  border-radius: 6px;
+  border: none;
+  padding: 1rem;
+  background-color: var(--gray-400);
+}
+
+.sectionForm button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  width: 6rem;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--blue);
+  font-size: 18px;
+  transition: 0.2ms;
+}
+
+.sectionForm button:hover {
+  background-color: var(--blueDark);
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1rem; 
+}
+.contentHeader {
+  flex-direction: row;
+  width: 46rem;
+}
+.contentHeader div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5rem;
+}
+
+.p1 {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.p2 {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.p1 span, .p2 span{
+  background-color: var(--gray-400);
+  padding: 0.1rem 0.6rem;
+  border-radius: 10px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15.25rem;
+  border-top: 1px solid var(--gray-400);
+  width: 46rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.contentNone {
+  display: none;
+}
+.tasks img {
+  margin-bottom: 1.5rem;
+}
+
+.tasks strong, .tasks p {
+  color: var(--gray-300);
+}
+
+
+
