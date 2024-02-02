@@ -1,52 +1,41 @@
-import { useContext, useState } from "react";
-import "./style.css"
+import { useContext } from "react";
+import "./style.css";
 import { TasksContext } from "../../App";
 
 
-interface NewTask {
-  count: number,
-  setCount: () => void,
-  newTasks: string,
-  setNewTasks: any,
-  tasks: '',
-  setTasks: () => void,
-}
-
-function handleNewTasks() {
-  event?.preventDefault();
-
-  const { count, setCount, newTasks, setNewTasks, tasks, setTasks }: NewTask = useContext(TasksContext)
-
-  const nextTask = {
-    key: count,
-    content: newTasks,
-    status: false,
-  };
-
-  setTasks([...tasks, nextTask]);
-  setNewTasks("");
-
-  setCount((state: number) => {
-    return state + 1
-  })
-}
-
 
 export const Modal = () => {
-  const { newTasks, setNewTasks } = useContext(TasksContext)
+  const { count, setCount, newTasks, setNewTasks, setTasks } = useContext(
+    TasksContext
+  );
 
+  const handleNewTasksSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const nextTask = {
+      key: count,
+      content: newTasks,
+      status: false,
+    };
+
+    setTasks((prevTasks : any) => [...prevTasks, nextTask]);
+    setNewTasks("");
+    setCount((prevCount : number) => prevCount + 1);
+  };
 
   return (
     <div>
       <h1>Pure CSS modal box</h1>
       <div>
-        <p>You can place trigger button wherever you want.</p>
+        <p>You can place the trigger button wherever you want.</p>
         <p>
-          <label className="btn btn--blue" htmlFor="modal-1">Adicionar Tarefa</label>
+          <label className="btn btn--blue" htmlFor="modal-1">
+            Adicionar Tarefa
+          </label>
         </p>
       </div>
 
-      <form onSubmit={handleNewTasks}>
+      <form onSubmit={handleNewTasksSubmit}>
         <input className="modal-state" id="modal-1" type="checkbox" />
         <div className="modal">
           <label className="modal__bg" htmlFor="modal-1"></label>
@@ -67,19 +56,16 @@ export const Modal = () => {
               />
             </div>
             <div className="btnContainer">
-              <button className="btnCancel" type="submit">
-                <p>Cancelar</p>
-              </button>
-              <button onClick={handleNewTasks} className="btnAdd" type="submit">
+              <label htmlFor="modal-1" className="btnCancel" >
+                <p className="auto">Cancelar</p>
+              </label>
+              <button className="btnAdd" type="submit">
                 <p>Adicionar</p>
               </button>
             </div>
           </div>
         </div>
       </form>
-
-
-
     </div>
-  )
-}
+  );
+};

@@ -26,6 +26,10 @@
   display: none;
 }
 
+.modal-state-btn {
+  visibility: hidden;
+}
+
 .modal-state:checked + .modal {
   opacity: 1;
   visibility: visible;
@@ -120,37 +124,47 @@ body {
 }
 
 .btnCancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 185px;
   height: 51px;
-  padding: 16px, 24px, 16px, 24px;
   border-radius: 8px;
-  border:solid transparent 1px;
+  border: solid transparent 1px;
   gap: 8px;
-  background: #E7EEFB;
+  background: #e7eefb;
 
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: -0.02em;
   text-align: center;
+
+  cursor: pointer;
 }
 
 .btnAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   width: 185px;
   height: 51px;
-  padding: 16px, 24px, 16px, 24px;
   border-radius: 8px;
-  border:solid transparent 1px;
+  border: solid transparent 1px;
   gap: 8px;
 
   color: #e7eefb;
 
-  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+  background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: -0.02em;
   text-align: center;
+
+  cursor: pointer;
 }
 
 .btn:hover,

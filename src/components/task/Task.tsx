@@ -3,7 +3,7 @@ import { Trash } from "@phosphor-icons/react";
 import { useState } from "react";
 
 interface bodyTask {
-  key?: number;
+  key?: string;
   content: string;
   status: boolean;
   onDeleteTasks: (taskToDelete: string) => void;
